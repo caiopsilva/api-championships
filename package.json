@@ -39,7 +39,8 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "pg": "^7.4.3",
-    "rollbar": "^2.4.7"
+    "rollbar": "^2.4.7",
+    "sqlite3": "^4.0.2"
   },
   "devDependencies": {
     "jest": "^23.6.0",
