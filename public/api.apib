@@ -1,0 +1,295 @@
+FORMAT: 1A
+HOST: http://api-navetest.herokuapp.com/v1
+
+# api-navetest
+
+API de um produto para organização de campeonatos de tênis de mesa.
+As partidas são geradas automaticamentes.
+
+## Users Collection [/users]
+
+### List All Users [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "a06ffb0c-c722-4bc2-945b-d56a4f4b4ee1",
+                "name": "Matheus Danemberg",
+                "email": "matheus@nave.rs",
+                "role_id": "526775d4-7f17-4432-8c74-466e2f25d501",
+                "created_at": "2018-10-15T14:03:39.081Z",
+                "updated_at": "2018-10-15T14:03:39.081Z",
+                "role": {
+                    "id": "526775d4-7f17-4432-8c74-466e2f25d501",
+                    "name": "player"
+                }
+            }
+        ]
+
+### Create a New User [POST]
+
++ Request (application/json)
+
+        {
+            "email": "juju2@nave.rs",
+            "name": "Juliano Reis",
+            "password": "juju123",
+            "role_id": "526775d4-7f17-4432-8c74-466e2f25d501"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "7b5d6d36-1a65-4b80-9638-f6c40793d838",
+                "name": "Juliano Reis",
+                "email": "juju2@nave.rs",
+                "role_id": "526775d4-7f17-4432-8c74-466e2f25d501",
+                "created_at": "2018-10-16T12:39:16.122Z",
+                "updated_at": "2018-10-16T12:39:16.122Z",
+                "role": {
+                    "id": "526775d4-7f17-4432-8c74-466e2f25d501",
+                    "name": "player"
+                }
+            }
+
+## Users By Id Collection [/users/{id}]
+
+### Update a User [PUT]
+
++ Parameters
+    
+    + id: 7b5d6d36-1a65-4b80-9638-f6c40793d838 (uuid)
+
++ Request (application/json)
+
+        {
+            "email":"gustavo2@nave.rs",
+            "name":"Gustavo Pinho",
+            "password":"gustavo123",
+            "role_id":"526775d4-7f17-4432-8c74-466e2f25d501"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "7b5d6d36-1a65-4b80-9638-f6c40793d838",
+            "name": "Gustavo Pinho",
+            "email": "gustavo2@nave.rs",
+            "role_id": "526775d4-7f17-4432-8c74-466e2f25d501",
+            "created_at": "2018-10-16T12:39:16.122Z",
+            "updated_at": "2018-10-16T12:57:42.229Z"
+        }
+
+### Delete a User [DELETE]
+
++ Parameters
+    
+    + id: 7b5d6d36-1a65-4b80-9638-f6c40793d838 (uuid)
+
++ Response 200 (application/json)
+
+        {
+            "name": "Deleted",
+            "message": "Successfully deleted",
+            "deleted": true,
+            "statusCode": 200,
+            "errorCode": 200
+        }
+
+## Championship Collection [/championships]
+
+### List all championships [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "9c946cdf-c47e-40ac-ae1d-016f19f13b77",
+                "name": "Taça",
+                "created_at": "2018-10-15T14:05:31.742Z",
+                "updated_at": "2018-10-15T14:06:47.132Z",
+                "users": [
+                            {
+                                "id": "a06ffb0c-c722-4bc2-945b-d56a4f4b4ee1",
+                                "name": "Matheus Danemberg",
+                                "email": "matheus@nave.rs",
+                                "role_id": "526775d4-7f17-4432-8c74-466e2f25d501",
+                                "created_at": "2018-10-15T14:03:39.081Z",
+                                "updated_at": "2018-10-15T14:03:39.081Z"
+                            }
+                        ]
+            }
+        ]
+    
+### Create a new Championship [POST]
+
++ Request (application/json)
+
+        {
+            "name":"Taça Nave"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "cd92e058-c9fa-465a-ba6f-277b1df4d107",
+                "name": "Taça Nave2",
+                "created_at": "2018-10-16T14:05:38.688Z",
+                "updated_at": "2018-10-16T14:05:38.688Z",
+                "users": []
+            }
+            
+## Championship By Id Collection [/championships/{id}]
+
+### Update a championship [PUT]
+
++ Parameters
+    
+    + id: 7b5d6d36-1a65-4b80-9638-f6c40793d838 (uuid)
+    
++ Request (application/json)
+
+        {
+            "name":"Taça Nave",
+            "users": ["a06ffb0c-c722-4bc2-945b-d56a4f4b4ee1", "b306d33e-baaa-4ba0-9b64-393fe4940f12"]
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id": "9c946cdf-c47e-40ac-ae1d-016f19f13b77",
+            "name": "Taça",
+            "created_at": "2018-10-15T14:05:31.742Z",
+            "updated_at": "2018-10-15T14:06:47.132Z",
+            "users": [
+                {
+                    "a06ffb0c-c722-4bc2-945b-d56a4f4b4ee1": {
+                        "merge": false,
+                        "add": true,
+                        "remove": false
+                    }
+                },
+                {
+                    "b306d33e-baaa-4ba0-9b64-393fe4940f12": {
+                        "merge": false,
+                        "add": true,
+                        "remove": false
+                    }
+                },
+                {
+                    "31b1918e-0dc4-4d03-9f68-34febac7e0fa": {
+                        "merge": false,
+                        "add": true,
+                        "remove": false
+                    }
+                }
+            ]
+        }
+        
+### Include one player [PATCH]
+
++ Parameters
+    
+    + id: 7b5d6d36-1a65-4b80-9638-f6c40793d838 (uuid)
+    
++ Request (application/json)
+
+        {
+            "user": "b306d33e-baaa-4ba0-9b64-393fe4940f12"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "9c946cdf-c47e-40ac-ae1d-016f19f13b77",
+            "name": "Taça",
+            "created_at": "2018-10-15T14:05:31.742Z",
+            "updated_at": "2018-10-15T14:06:47.132Z",
+            "users": [
+                {
+                    "bad3a357-7667-4731-9ff4-1f205ca0a254": {
+                        "merge": false,
+                        "add": true,
+                        "remove": false
+                    }
+                }
+            ]
+        }
+
+### Delete a championship [DELETE]
+
++ Parameters
+    
+    + id: 7b5d6d36-1a65-4b80-9638-f6c40793d838 (uuid)
+
++ Response 200 (application/json)
+
+        {
+            "name": "Deleted",
+            "message": "Successfully deleted",
+            "deleted": true,
+            "statusCode": 200,
+            "errorCode": 200
+        }
+        
+## Matches Collection [/matches]
+
+### List all matches [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "97d30c71-40d6-4eb8-9ccd-168b43a6efc7",
+                "score_user1": "11 x 7",
+                "score_user2": "11 x 7",
+                "finished": true,
+                "championship_id": "9c946cdf-c47e-40ac-ae1d-016f19f13b77",
+                "created_at": "2018-10-15T15:22:51.426Z",
+                "updated_at": "2018-10-15T17:29:14.245Z",
+                "users": [
+                    {
+                        "id": "a06ffb0c-c722-4bc2-945b-d56a4f4b4ee1",
+                        "name": "Matheus Danemberg",
+                        "email": "matheus@nave.rs",
+                        "role_id": "526775d4-7f17-4432-8c74-466e2f25d501",
+                        "created_at": "2018-10-15T14:03:39.081Z",
+                        "updated_at": "2018-10-15T14:03:39.081Z",
+                    },
+                    {
+                        "id": "b306d33e-baaa-4ba0-9b64-393fe4940f12",
+                        "name": "Joao Bretanha",
+                        "email": "joao@nave.rs",
+                        "role_id": "526775d4-7f17-4432-8c74-466e2f25d501",
+                        "created_at": "2018-10-15T14:04:24.950Z",
+                        "updated_at": "2018-10-15T14:04:24.950Z",
+                    }
+                ]
+            
+            }
+        ]
+
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
