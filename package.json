@@ -10,7 +10,7 @@
   "scripts": {
     "start": "babel-node api/index.js",
     "dev": "nodemon api/index.js --exec babel-node index.js --presets env,stage-0",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles --runInBand"
   },
   "keywords": [],
   "author": "Gustavo Pinho e Caio Silva",

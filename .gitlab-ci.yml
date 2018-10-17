@@ -1,0 +1,26 @@
+image: node:8.12.0
+
+cache: 
+  paths: 
+    - node_modules/
+
+jest: 
+  stage: test
+  script: 
+    - npm install -g knex
+    - npm install
+    - npm test 
+  only: 
+    - master
+
+production:
+  type: deploy
+  stage: deploy
+  image: ruby:latest
+  script: 
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=api-navetest --api-key=$HEROKU_API_KEY
+  only: 
+    - master
