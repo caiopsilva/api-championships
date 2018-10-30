@@ -1,0 +1,355 @@
+#%RAML 1.0
+---
+title: nave test
+baseUri: http://api-navetest.herokuapp.com/v1
+version: v1
+mediaType: application/json
+
+/users:
+    get:
+        description: Listando todos usuario. /users&ranking=true ==> Ordena os usuarios pelo ranking
+        queryParameters:
+            ranking:
+                example: ranking=true
+                required: false
+        responses:
+            200:
+                body: 
+                   application/json:
+                            example:
+                                [
+                                    {
+                                        "id": "6857fa5d-23ed-4f70-821d-c3eddd2c0253",
+                                        "name": "caio silva",
+                                        "email": "caio@nave.rs",
+                                        "rating": "1800",
+                                        "created_at": "2018-08-21T16:00:56.865Z",
+                                        "updated_at": "2018-08-21T16:00:56.865Z",
+                                    }
+                                ]
+    /signup:
+        post:
+            description: Incluindo um novo usuario
+            headers:
+                token:
+            body:
+                application/json:
+                    example: { 
+                            "name": "caio",
+                            "email": "caio@nave.rs",
+                            "password": "caio123",
+                            "rating": "1800"
+                            }
+            responses:
+                200:
+                    body:
+                        example: 
+                            {
+                                "id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                "name": "caio",
+                                "email": "caio@nave.rs",
+                                "rating": "1800",
+                                "created_at": "2018-10-30T00:24:27.878Z",
+                                "updated_at": "2018-10-30T00:24:27.878Z"
+                            }
+    /login:
+        post:
+            description: Login
+            body:
+                application/json:
+                    example: { "username": "caio@nave.rs", "password": "caio123" }
+            responses:
+                200:
+                    body:
+                        example:
+                                {
+                                  "id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                  "name": "caio",
+                                  "email": "caio@nave.rs",
+                                  "rating": "1800",
+                                  "created_at": "2018-10-30T00:24:27.878Z",
+                                  "updated_at": "2018-10-30T00:24:27.878Z"
+                                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiJhMWY4NTcwYy03ZjE4LTRjYzctODk0MC0wNjA3Mzc2N2I4ZjgiLCJ1c2VybmFtZSI6InRlc3RlIn0sImlhdCI6MTUzMTQ5NjMxM30.k2twkIRNM7ROohpDON_o7OgPmtY5VYo6oV2TXHK0uQ8",
+                                }
+    /{id}:
+        get:
+            description: Informações do usuario.
+            responses: 
+                200:
+                    body:
+                        application/json:
+                                example:
+                                    {
+                                        "id": "10a5f5fb-b7a5-490e-9bc1-a3f96e511379",
+                                        "name": "caio",
+                                        "email": "caio@nave.rs",
+                                        "rating": "1800",
+                                        "created_at": "2018-10-30T00:31:36.415Z",
+                                        "updated_at": "2018-10-30T00:31:36.415Z"
+                                    }
+        put:
+            description: Alterar informações de um usuario.
+            headers:
+                token:
+            body:
+                application/json:
+                    example: 
+                        {
+                            "name":"joao",
+                            "email":"joao@nave.rs",
+                            "password":"joao123",
+                            "rating":"1810"
+                        }                    
+            responses:
+                200:
+                    body:
+                        example: 
+                            {
+                                "id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                "name": "joao",
+                                "email": "joao@nave.rs",
+                                "rating": "1810",
+                                "created_at": "2018-10-30T00:24:27.878Z",
+                                "updated_at": "2018-10-30T00:32:55.480Z"
+                            }
+        delete:
+            description: Exluir um usuario.
+            headers:
+                token:
+            responses: 
+                200:
+                    body:
+                        example:
+                                {
+                                    "name": "Deleted",
+                                    "message": "Successfully deleted",
+                                    "deleted": true,
+                                    "statusCode": 200,
+                                    "errorCode": 200
+                                }
+/championships:
+    get:
+        description: Lista todos campeonatos
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: 
+                            [
+                                {
+                                    "id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                    "name": "Taça Nave",
+                                    "created_at": "2018-10-30T00:43:25.182Z",
+                                    "updated_at": "2018-10-30T00:43:25.182Z",
+                                    "users": []
+                                }
+                            ]
+    post:
+        description: Criando um campeonato, os usuarios são informados pelo PUT.
+        headers:
+            token:
+        body:
+            application/json:
+                example: 
+                    {
+                        "name": "Taça Nave",
+                    }
+        responses:
+            200:
+                body:
+                    example: 
+                        {
+                            "id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                            "name": "Taça Nave",
+                            "created_at": "2018-10-30T00:43:25.182Z",
+                            "updated_at": "2018-10-30T00:43:25.182Z",
+                            "users": []
+                        }
+    /id:
+        put:
+            description: Incluindo um array de usuarios, partidas geradas automaticamente.
+            headers:
+                token:
+            body:
+                application/json:
+                    example: 
+                        {
+                            "name": "Taça Nave",
+                            "users": ["b7567058-6d6a-4ea3-a532-b1cc35dcb1ae", "a5867058-6d6a-4ea3-a532-b1cc35dcb1ae"]
+                        }
+
+            responses:
+                200:
+                    body:
+                        example:
+                            {
+                                "id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                "name": "Taça Nave",
+                                "created_at": "2018-10-30T00:43:25.182Z",
+                                "updated_at": "2018-10-30T00:43:25.182Z",
+                                "users": [
+                                    {
+                                        "24e5fcc9-b226-4419-853c-53ef22998788": {
+                                            "merge": false,
+                                            "add": true,
+                                            "remove": false
+                                        }
+                                    },
+                                    {
+                                        "10a5f5fb-b7a5-490e-9bc1-a3f96e511379": {
+                                            "merge": false,
+                                            "add": true,
+                                            "remove": false
+                                        }
+                                    }
+                                ]
+                            }
+        patch:
+            description: Incluir um novo usuario no campeonato, as partidas são geradas automaticamente.
+            headers:
+                token:
+            body:
+                application/json:
+                    example: 
+                        {
+                            "user": "b7567058-6d6a-4ea3-a532-b1cc35dcb1ae"
+                        }
+
+            responses:
+                200:
+                    body:
+                        example:
+                            {
+                                "id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                "name": "Taça Nave",
+                                "created_at": "2018-10-30T00:43:25.182Z",
+                                "updated_at": "2018-10-30T00:43:25.182Z",
+                                "users": [
+                                    {
+                                        "id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                        "name": "joao",
+                                        "email": "joao@nave.rs",
+                                        "rating": "1810",
+                                        "created_at": "2018-10-30T00:24:27.878Z",
+                                        "updated_at": "2018-10-30T00:32:55.480Z",
+                                    },
+                                    {
+                                        "id": "10a5f5fb-b7a5-490e-9bc1-a3f96e511379",
+                                        "name": "caio",
+                                        "email": "caio@nave.rs",
+                                        "rating": "1800",
+                                        "created_at": "2018-10-30T00:31:36.415Z",
+                                        "updated_at": "2018-10-30T00:31:36.415Z",
+                                    },
+                                    {
+                                        "15e25264-7244-4331-86dc-064cf8e44743": {
+                                            "merge": false,
+                                            "add": true,
+                                            "remove": false
+                                        }
+                                    }
+                                ]
+                            }
+
+        delete:
+            description: Excluindo um campeonato
+            headers:
+                token:
+            responses: 
+                200:
+                    body:
+                        example:
+                                {
+                                    "name": "Deleted",
+                                    "message": "Successfully deleted",
+                                    "deleted": true,
+                                    "statusCode": 200,
+                                    "errorCode": 200
+                                }
+/matches:
+    get:
+        description: Listando todas as partidas
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: 
+                            [
+                                {
+                                    "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+                                    "winner_id": null,
+                                    "score_1": "0 x 0",
+                                    "score_2": "0 x 0",
+                                    "finished": false,
+                                    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                    "created_at": "2018-10-30T00:49:08.613Z",
+                                    "updated_at": "2018-10-30T00:49:08.613Z",
+                                    "users": [
+                                        {
+                                            "id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                            "name": "joao",
+                                            "email": "joao@nave.rs",
+                                            "rating": "1810",
+                                            "created_at": "2018-10-30T00:24:27.878Z",
+                                            "updated_at": "2018-10-30T00:32:55.480Z",
+                                        },
+                                        {
+                                            "id": "10a5f5fb-b7a5-490e-9bc1-a3f96e511379",
+                                            "name": "caio",
+                                            "email": "caio@nave.rs",
+                                            "rating": "1800",
+                                            "created_at": "2018-10-30T00:31:36.415Z",
+                                            "updated_at": "2018-10-30T00:31:36.415Z",
+                                        }
+                                    ]
+                                }
+                            ]
+    /id:
+        put:
+            description: Incluir o resultado e o ganhador, a partida sera finalizada com dois resultados iguais forem informados.
+            headers:
+                token:
+            body:
+                application/json:
+                    example: 
+                        {
+                            "score":"11 x 8",
+                            "winner_id":"adb66acc-087c-4ae0-b34f-3d6e5fa36254"
+                        }
+            responses:
+                200:
+                    body:
+                        example: 
+                            {
+                                "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+                                "winner_id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                "score_1": "11 x 8",
+                                "score_2": "0 x 0",
+                                "finished": false,
+                                "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                "created_at": "2018-10-30T00:49:08.613Z",
+                                "updated_at": "2018-10-30T00:57:16.737Z",
+                                "users": [
+                                    {
+                                        "id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                        "name": "joao",
+                                        "email": "joao@nave.rs",
+                                        "rating": "1810",
+                                        "created_at": "2018-10-30T00:24:27.878Z",
+                                        "updated_at": "2018-10-30T00:32:55.480Z",
+                                        "_pivot_match_id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+                                        "_pivot_user_id": "24e5fcc9-b226-4419-853c-53ef22998788"
+                                    },
+                                    {
+                                        "id": "10a5f5fb-b7a5-490e-9bc1-a3f96e511379",
+                                        "name": "caio",
+                                        "email": "caio@nave.rs",
+                                        "rating": "1800",
+                                        "created_at": "2018-10-30T00:31:36.415Z",
+                                        "updated_at": "2018-10-30T00:31:36.415Z",
+                                        "_pivot_match_id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+                                        "_pivot_user_id": "10a5f5fb-b7a5-490e-9bc1-a3f96e511379"
+                                    }
+                                ]
+                            }
+        
