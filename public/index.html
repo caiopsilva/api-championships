@@ -223,7 +223,45 @@
   "deleted": true,
   "statusCode": 200,
   "errorCode": 200
-}</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="championships" class="panel-title">/championships</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_championships"><span class="parent"></span>/championships</a> <span class="methods"><a href="#championships_get"><span class="badge badge_get">get</span></a> <a href="#championships_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_championships" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#championships_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Lista todos campeonatos</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#championships_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Criando um campeonato, os usuarios são informados pelo PUT.</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="championships_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/championships</h4></div><div class="modal-body"><div class="alert alert-info"><p>Lista todos campeonatos</p></div><ul class="nav nav-tabs"><li class="active"><a href="#championships_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="championships_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
+}</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users__id__championships"><span class="parent">/users/{id}</span>/championships</a> <span class="methods"><a href="#users__id__championships_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_users__id__championships" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users__id__championships_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listar campeonatos do usuario</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__id__championships_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/users/{id}</span>/championships</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listar campeonatos do usuario</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__id__championships_get_request" data-toggle="tab">Request</a></li><li><a href="#users__id__championships_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__id__championships_get_request"><h3>URI Parameters</h3><ul><li><strong>id</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="users__id__championships_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
+  {
+    "id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+    "name": "Taça Nave",
+    "created_at": "2018-10-30T00:43:25.182Z",
+    "updated_at": "2018-10-30T00:43:25.182Z"
+  }
+]</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users__id__matches"><span class="parent">/users/{id}</span>/matches</a> <span class="methods"><a href="#users__id__matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_users__id__matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users__id__matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listar partidas do usuario</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__id__matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/users/{id}</span>/matches</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listar partidas do usuario</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__id__matches_get_request" data-toggle="tab">Request</a></li><li><a href="#users__id__matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__id__matches_get_request"><h3>URI Parameters</h3><ul><li><strong>id</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="users__id__matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
+  {
+    "id": "a83b9fc1-b3e2-43d9-996e-745732b05cce",
+    "winner_id": null,
+    "score_1": "0 x 0",
+    "score_2": "0 x 0",
+    "finished": false,
+    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+    "created_at": "2018-10-30T00:51:41.607Z",
+    "updated_at": "2018-10-30T00:51:41.607Z"
+  },
+  {
+    "id": "0a87b9b7-8bf5-452a-9b8b-f169f0fbc217",
+    "winner_id": null,
+    "score_1": "0 x 0",
+    "score_2": "0 x 0",
+    "finished": false,
+    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+    "created_at": "2018-10-30T00:51:41.607Z",
+    "updated_at": "2018-10-30T00:51:41.607Z"
+  },
+  {
+    "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+    "winner_id": "24e5fcc9-b226-4419-853c-53ef22998788",
+    "score_1": "11 x 8",
+    "score_2": "0 x 0",
+    "finished": false,
+    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+    "created_at": "2018-10-30T00:49:08.613Z",
+    "updated_at": "2018-10-30T00:57:16.737Z"
+  }
+]</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="championships" class="panel-title">/championships</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_championships"><span class="parent"></span>/championships</a> <span class="methods"><a href="#championships_get"><span class="badge badge_get">get</span></a> <a href="#championships_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_championships" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#championships_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Lista todos campeonatos</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#championships_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Criando um campeonato, os usuarios são informados pelo PUT.</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="championships_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/championships</h4></div><div class="modal-body"><div class="alert alert-info"><p>Lista todos campeonatos</p></div><ul class="nav nav-tabs"><li class="active"><a href="#championships_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="championships_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
   {
     "id": "4859c864-bfd5-4e1a-9749-93f39a016237",
     "name": "Taça Nave",
@@ -304,7 +342,38 @@
   "deleted": true,
   "statusCode": 200,
   "errorCode": 200
-}</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="matches" class="panel-title">/matches</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_matches"><span class="parent"></span>/matches</a> <span class="methods"><a href="#matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listando todas as partidas</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/matches</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listando todas as partidas</p></div><ul class="nav nav-tabs"><li class="active"><a href="#matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
+}</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_championships_id_matches"><span class="parent">/championships/id</span>/matches</a> <span class="methods"><a href="#championships_id_matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_championships_id_matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#championships_id_matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="championships_id_matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/championships/id</span>/matches</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#championships_id_matches_get_request" data-toggle="tab">Request</a></li><li><a href="#championships_id_matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="championships_id_matches_get_request"><h3>Headers</h3><ul><li><strong>token</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="championships_id_matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
+  {
+    "id": "a83b9fc1-b3e2-43d9-996e-745732b05cce",
+    "winner_id": null,
+    "score_1": "0 x 0",
+    "score_2": "0 x 0",
+    "finished": false,
+    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+    "created_at": "2018-10-30T00:51:41.607Z",
+    "updated_at": "2018-10-30T00:51:41.607Z"
+  },
+  {
+    "id": "0a87b9b7-8bf5-452a-9b8b-f169f0fbc217",
+    "winner_id": null,
+    "score_1": "0 x 0",
+    "score_2": "0 x 0",
+    "finished": false,
+    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+    "created_at": "2018-10-30T00:51:41.607Z",
+    "updated_at": "2018-10-30T00:51:41.607Z"
+  },
+  {
+    "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+    "winner_id": "24e5fcc9-b226-4419-853c-53ef22998788",
+    "score_1": "11 x 8",
+    "score_2": "0 x 0",
+    "finished": false,
+    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+    "created_at": "2018-10-30T00:49:08.613Z",
+    "updated_at": "2018-10-30T00:57:16.737Z"
+  }
+]</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="matches" class="panel-title">/matches</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_matches"><span class="parent"></span>/matches</a> <span class="methods"><a href="#matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listando todas as partidas</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/matches</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listando todas as partidas</p></div><ul class="nav nav-tabs"><li class="active"><a href="#matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
   {
     "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
     "winner_id": null,
