@@ -145,7 +145,7 @@ mediaType: application/json
                                         ]
         /matches:
             get:
-                description: Listar partidas do usuario
+                description: Listar partidas do usuario.
                 responses: 
                     200:
                         body:
@@ -326,7 +326,14 @@ mediaType: application/json
                                 }
         /matches:
             get:
-                description:
+                description: Listar todas partidas de um campeonato. Paginação default ==> page=1, pageSize=9
+                queryParameters:
+                    page:
+                        example: page=1
+                        required: false
+                    pageSize:
+                        example: pageSize=4
+                        required: false
                 headers:
                     token:
                 responses: 
@@ -367,7 +374,14 @@ mediaType: application/json
                                 ]
 /matches:
     get:
-        description: Listando todas as partidas
+        description: Listando todas as partidas. Paginação default ==> page=1, pageSize=9
+            queryParameters:
+                page:
+                    example: page=1
+                    required: false
+                pageSize:
+                    example: pageSize=4
+                    required: false
         responses:
             200:
                 body:
