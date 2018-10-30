@@ -339,84 +339,97 @@ mediaType: application/json
                 responses: 
                     200:
                         body:
-                            example:
-                                [
-                                    {
-                                        "id": "a83b9fc1-b3e2-43d9-996e-745732b05cce",
-                                        "winner_id": null,
-                                        "score_1": "0 x 0",
-                                        "score_2": "0 x 0",
-                                        "finished": false,
-                                        "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-                                        "created_at": "2018-10-30T00:51:41.607Z",
-                                        "updated_at": "2018-10-30T00:51:41.607Z"
-                                    },
-                                    {
-                                        "id": "0a87b9b7-8bf5-452a-9b8b-f169f0fbc217",
-                                        "winner_id": null,
-                                        "score_1": "0 x 0",
-                                        "score_2": "0 x 0",
-                                        "finished": false,
-                                        "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-                                        "created_at": "2018-10-30T00:51:41.607Z",
-                                        "updated_at": "2018-10-30T00:51:41.607Z"
-                                    },
-                                    {
-                                        "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
-                                        "winner_id": "24e5fcc9-b226-4419-853c-53ef22998788",
-                                        "score_1": "11 x 8",
-                                        "score_2": "0 x 0",
-                                        "finished": false,
-                                        "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-                                        "created_at": "2018-10-30T00:49:08.613Z",
-                                        "updated_at": "2018-10-30T00:57:16.737Z"
-                                    }
-                                ]
+                            example: 
+                                {
+                                    "data": 
+                                    [
+                                        {
+                                            "id": "fcd29737-443f-42ff-a404-b5b908c86bdc",
+                                            "winner_id": null,
+                                            "score_1": "0 x 0",
+                                            "score_2": "0 x 0",
+                                            "finished": false,
+                                            "championship_id": "f383c4b1-e263-4260-9f8e-1435a52551f9",
+                                            "created_at": "2018-10-30T11:51:18.983Z",
+                                            "updated_at": "2018-10-30T11:51:18.983Z",
+                                            "users": [
+                                                {
+                                                    "id": "860e5bd4-c01e-421b-a1af-cb330a762401",
+                                                    "name": "juliano",
+                                                    "email": "matheus@nave.rs",
+                                                    "rating": "1800",
+                                                    "created_at": "2018-10-30T11:48:41.434Z",
+                                                    "updated_at": "2018-10-30T11:48:41.434Z"
+                                                },
+                                                {
+                                                    "id": "28c50026-8533-4b10-95f2-bdd1f8d34a57",
+                                                    "name": "juliano",
+                                                    "email": "victor@nave.rs",
+                                                    "rating": "1800",
+                                                    "created_at": "2018-10-30T11:48:47.040Z",
+                                                    "updated_at": "2018-10-30T11:48:47.040Z"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "page": 1,
+                                    "pageSize": 1,
+                                    "rowCount": 2,
+                                    "pageCount": 2
+                                }
+                    
 /matches:
     get:
         description: Listando todas as partidas. Paginação default ==> page=1, pageSize=9
-            queryParameters:
-                page:
-                    example: page=1
-                    required: false
-                pageSize:
-                    example: pageSize=4
-                    required: false
+        queryParameters:
+            page:
+                example: page=1
+                required: false
+            pageSize:
+                example: pageSize=4
+                required: false
         responses:
             200:
                 body:
                     application/json:
                         example: 
-                            [
-                                {
-                                    "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
-                                    "winner_id": null,
-                                    "score_1": "0 x 0",
-                                    "score_2": "0 x 0",
-                                    "finished": false,
-                                    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-                                    "created_at": "2018-10-30T00:49:08.613Z",
-                                    "updated_at": "2018-10-30T00:49:08.613Z",
-                                    "users": [
-                                        {
-                                            "id": "24e5fcc9-b226-4419-853c-53ef22998788",
-                                            "name": "joao",
-                                            "email": "joao@nave.rs",
-                                            "rating": "1810",
-                                            "created_at": "2018-10-30T00:24:27.878Z",
-                                            "updated_at": "2018-10-30T00:32:55.480Z",
-                                        },
-                                        {
-                                            "id": "10a5f5fb-b7a5-490e-9bc1-a3f96e511379",
-                                            "name": "caio",
-                                            "email": "caio@nave.rs",
-                                            "rating": "1800",
-                                            "created_at": "2018-10-30T00:31:36.415Z",
-                                            "updated_at": "2018-10-30T00:31:36.415Z",
-                                        }
-                                    ]
-                                }
-                            ]
+                            {
+                                "data": 
+                                [
+                                    {
+                                        "id": "fcd29737-443f-42ff-a404-b5b908c86bdc",
+                                        "winner_id": null,
+                                        "score_1": "0 x 0",
+                                        "score_2": "0 x 0",
+                                        "finished": false,
+                                        "championship_id": "f383c4b1-e263-4260-9f8e-1435a52551f9",
+                                        "created_at": "2018-10-30T11:51:18.983Z",
+                                        "updated_at": "2018-10-30T11:51:18.983Z",
+                                        "users": [
+                                            {
+                                                "id": "860e5bd4-c01e-421b-a1af-cb330a762401",
+                                                "name": "juliano",
+                                                "email": "matheus@nave.rs",
+                                                "rating": "1800",
+                                                "created_at": "2018-10-30T11:48:41.434Z",
+                                                "updated_at": "2018-10-30T11:48:41.434Z"
+                                            },
+                                            {
+                                                "id": "28c50026-8533-4b10-95f2-bdd1f8d34a57",
+                                                "name": "juliano",
+                                                "email": "victor@nave.rs",
+                                                "rating": "1800",
+                                                "created_at": "2018-10-30T11:48:47.040Z",
+                                                "updated_at": "2018-10-30T11:48:47.040Z"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "page": 1,
+                                "pageSize": 1,
+                                "rowCount": 2,
+                                "pageCount": 2
+                            }
     /id:
         put:
             description: Incluir o resultado e o ganhador, a partida sera finalizada com dois resultados iguais forem informados.

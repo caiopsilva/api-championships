@@ -342,67 +342,77 @@
   "deleted": true,
   "statusCode": 200,
   "errorCode": 200
-}</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_championships_id_matches"><span class="parent">/championships/id</span>/matches</a> <span class="methods"><a href="#championships_id_matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_championships_id_matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#championships_id_matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listar todas partidas de um campeonato. Paginação default ==&gt; page=1, pageSize=9</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="championships_id_matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/championships/id</span>/matches</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listar todas partidas de um campeonato. Paginação default ==&gt; page=1, pageSize=9</p></div><ul class="nav nav-tabs"><li class="active"><a href="#championships_id_matches_get_request" data-toggle="tab">Request</a></li><li><a href="#championships_id_matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="championships_id_matches_get_request"><h3>Headers</h3><ul><li><strong>token</strong>: <em>required (string)</em></li></ul><h3>Query Parameters</h3><ul><li><strong>page</strong>: <em>(string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>page=1</code></pre></div></li><li><strong>pageSize</strong>: <em>(string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>pageSize=4</code></pre></div></li></ul></div><div class="tab-pane" id="championships_id_matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
-  {
-    "id": "a83b9fc1-b3e2-43d9-996e-745732b05cce",
-    "winner_id": null,
-    "score_1": "0 x 0",
-    "score_2": "0 x 0",
-    "finished": false,
-    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-    "created_at": "2018-10-30T00:51:41.607Z",
-    "updated_at": "2018-10-30T00:51:41.607Z"
-  },
-  {
-    "id": "0a87b9b7-8bf5-452a-9b8b-f169f0fbc217",
-    "winner_id": null,
-    "score_1": "0 x 0",
-    "score_2": "0 x 0",
-    "finished": false,
-    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-    "created_at": "2018-10-30T00:51:41.607Z",
-    "updated_at": "2018-10-30T00:51:41.607Z"
-  },
-  {
-    "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
-    "winner_id": "24e5fcc9-b226-4419-853c-53ef22998788",
-    "score_1": "11 x 8",
-    "score_2": "0 x 0",
-    "finished": false,
-    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-    "created_at": "2018-10-30T00:49:08.613Z",
-    "updated_at": "2018-10-30T00:57:16.737Z"
-  }
-]</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="matches" class="panel-title">/matches</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_matches"><span class="parent"></span>/matches</a> <span class="methods"><a href="#matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listando todas as partidas. Paginação default ==&gt; page=1, pageSize=9 queryParameters</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/matches</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listando todas as partidas. Paginação default ==&gt; page=1, pageSize=9 queryParameters</p></div><ul class="nav nav-tabs"><li class="active"><a href="#matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
-  {
-    "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
-    "winner_id": null,
-    "score_1": "0 x 0",
-    "score_2": "0 x 0",
-    "finished": false,
-    "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
-    "created_at": "2018-10-30T00:49:08.613Z",
-    "updated_at": "2018-10-30T00:49:08.613Z",
-    "users": [
-      {
-        "id": "24e5fcc9-b226-4419-853c-53ef22998788",
-        "name": "joao",
-        "email": "joao@nave.rs",
-        "rating": "1810",
-        "created_at": "2018-10-30T00:24:27.878Z",
-        "updated_at": "2018-10-30T00:32:55.480Z"
-      },
-      {
-        "id": "10a5f5fb-b7a5-490e-9bc1-a3f96e511379",
-        "name": "caio",
-        "email": "caio@nave.rs",
-        "rating": "1800",
-        "created_at": "2018-10-30T00:31:36.415Z",
-        "updated_at": "2018-10-30T00:31:36.415Z"
-      }
-    ]
-  }
-]</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_matches_id"><span class="parent">/matches</span>/id</a> <span class="methods"><a href="#matches_id_put"><span class="badge badge_put">put</span></a></span></h4></div><div id="panel_matches_id" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#matches_id_put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Incluir o resultado e o ganhador, a partida sera finalizada com dois resultados iguais forem informados.</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="matches_id_put"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/matches</span>/id</h4></div><div class="modal-body"><div class="alert alert-info"><p>Incluir o resultado e o ganhador, a partida sera finalizada com dois resultados iguais forem informados.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#matches_id_put_request" data-toggle="tab">Request</a></li><li><a href="#matches_id_put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="matches_id_put_request"><h3>Headers</h3><ul><li><strong>token</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+}</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_championships_id_matches"><span class="parent">/championships/id</span>/matches</a> <span class="methods"><a href="#championships_id_matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_championships_id_matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#championships_id_matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listar todas partidas de um campeonato. Paginação default ==&gt; page=1, pageSize=9</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="championships_id_matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/championships/id</span>/matches</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listar todas partidas de um campeonato. Paginação default ==&gt; page=1, pageSize=9</p></div><ul class="nav nav-tabs"><li class="active"><a href="#championships_id_matches_get_request" data-toggle="tab">Request</a></li><li><a href="#championships_id_matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="championships_id_matches_get_request"><h3>Headers</h3><ul><li><strong>token</strong>: <em>required (string)</em></li></ul><h3>Query Parameters</h3><ul><li><strong>page</strong>: <em>(string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>page=1</code></pre></div></li><li><strong>pageSize</strong>: <em>(string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>pageSize=4</code></pre></div></li></ul></div><div class="tab-pane" id="championships_id_matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "data": [
+    {
+      "id": "fcd29737-443f-42ff-a404-b5b908c86bdc",
+      "winner_id": null,
+      "score_1": "0 x 0",
+      "score_2": "0 x 0",
+      "finished": false,
+      "championship_id": "f383c4b1-e263-4260-9f8e-1435a52551f9",
+      "created_at": "2018-10-30T11:51:18.983Z",
+      "updated_at": "2018-10-30T11:51:18.983Z",
+      "users": [
+        {
+          "id": "860e5bd4-c01e-421b-a1af-cb330a762401",
+          "name": "juliano",
+          "email": "matheus@nave.rs",
+          "rating": "1800",
+          "created_at": "2018-10-30T11:48:41.434Z",
+          "updated_at": "2018-10-30T11:48:41.434Z"
+        },
+        {
+          "id": "28c50026-8533-4b10-95f2-bdd1f8d34a57",
+          "name": "juliano",
+          "email": "victor@nave.rs",
+          "rating": "1800",
+          "created_at": "2018-10-30T11:48:47.040Z",
+          "updated_at": "2018-10-30T11:48:47.040Z"
+        }
+      ]
+    }
+  ],
+  "page": 1,
+  "pageSize": 1,
+  "rowCount": 2,
+  "pageCount": 2
+}</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="matches" class="panel-title">/matches</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_matches"><span class="parent"></span>/matches</a> <span class="methods"><a href="#matches_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_matches" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#matches_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Listando todas as partidas. Paginação default ==&gt; page=1, pageSize=9</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="matches_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/matches</h4></div><div class="modal-body"><div class="alert alert-info"><p>Listando todas as partidas. Paginação default ==&gt; page=1, pageSize=9</p></div><ul class="nav nav-tabs"><li class="active"><a href="#matches_get_request" data-toggle="tab">Request</a></li><li><a href="#matches_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="matches_get_request"><h3>Query Parameters</h3><ul><li><strong>page</strong>: <em>(string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>page=1</code></pre></div></li><li><strong>pageSize</strong>: <em>(string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>pageSize=4</code></pre></div></li></ul></div><div class="tab-pane" id="matches_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "data": [
+    {
+      "id": "fcd29737-443f-42ff-a404-b5b908c86bdc",
+      "winner_id": null,
+      "score_1": "0 x 0",
+      "score_2": "0 x 0",
+      "finished": false,
+      "championship_id": "f383c4b1-e263-4260-9f8e-1435a52551f9",
+      "created_at": "2018-10-30T11:51:18.983Z",
+      "updated_at": "2018-10-30T11:51:18.983Z",
+      "users": [
+        {
+          "id": "860e5bd4-c01e-421b-a1af-cb330a762401",
+          "name": "juliano",
+          "email": "matheus@nave.rs",
+          "rating": "1800",
+          "created_at": "2018-10-30T11:48:41.434Z",
+          "updated_at": "2018-10-30T11:48:41.434Z"
+        },
+        {
+          "id": "28c50026-8533-4b10-95f2-bdd1f8d34a57",
+          "name": "juliano",
+          "email": "victor@nave.rs",
+          "rating": "1800",
+          "created_at": "2018-10-30T11:48:47.040Z",
+          "updated_at": "2018-10-30T11:48:47.040Z"
+        }
+      ]
+    }
+  ],
+  "page": 1,
+  "pageSize": 1,
+  "rowCount": 2,
+  "pageCount": 2
+}</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_matches_id"><span class="parent">/matches</span>/id</a> <span class="methods"><a href="#matches_id_put"><span class="badge badge_put">put</span></a></span></h4></div><div id="panel_matches_id" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#matches_id_put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Incluir o resultado e o ganhador, a partida sera finalizada com dois resultados iguais forem informados.</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="matches_id_put"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/matches</span>/id</h4></div><div class="modal-body"><div class="alert alert-info"><p>Incluir o resultado e o ganhador, a partida sera finalizada com dois resultados iguais forem informados.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#matches_id_put_request" data-toggle="tab">Request</a></li><li><a href="#matches_id_put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="matches_id_put_request"><h3>Headers</h3><ul><li><strong>token</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "score": "11 x 8",
   "winner_id": "adb66acc-087c-4ae0-b34f-3d6e5fa36254"
 }</code></pre></div></div><div class="tab-pane" id="matches_id_put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
