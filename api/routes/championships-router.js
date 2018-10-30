@@ -8,6 +8,8 @@ const valid = new ChampionshipsValidate()
 
 router.get('/championships', ctrl.get)
 
+router.get('/championships/:id/matches', ctrl.getMatches)
+
 router.post('/championships', valid.create(), ctrl.create)
 router.put('/championships/:id', valid.update(), ctrl.update)
 

@@ -127,6 +127,64 @@ mediaType: application/json
                                     "statusCode": 200,
                                     "errorCode": 200
                                 }
+        /championships:
+            get:
+                description: Listar campeonatos do usuario
+                responses: 
+                    200:
+                        body:
+                            application/json:
+                                    example:
+                                        [
+                                            {
+                                                "id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                                "name": "Taça Nave",
+                                                "created_at": "2018-10-30T00:43:25.182Z",
+                                                "updated_at": "2018-10-30T00:43:25.182Z"
+                                            }
+                                        ]
+        /matches:
+            get:
+                description: Listar partidas do usuario
+                responses: 
+                    200:
+                        body:
+                            application/json:
+                                    example:
+                                        [
+                                            {
+                                                "id": "a83b9fc1-b3e2-43d9-996e-745732b05cce",
+                                                "winner_id": null,
+                                                "score_1": "0 x 0",
+                                                "score_2": "0 x 0",
+                                                "finished": false,
+                                                "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                                "created_at": "2018-10-30T00:51:41.607Z",
+                                                "updated_at": "2018-10-30T00:51:41.607Z"
+                                            },
+                                            {
+                                                "id": "0a87b9b7-8bf5-452a-9b8b-f169f0fbc217",
+                                                "winner_id": null,
+                                                "score_1": "0 x 0",
+                                                "score_2": "0 x 0",
+                                                "finished": false,
+                                                "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                                "created_at": "2018-10-30T00:51:41.607Z",
+                                                "updated_at": "2018-10-30T00:51:41.607Z"
+                                            },
+                                            {
+                                                "id": "4a0e091e-2c9d-4eac-90db-ba6ee0f65630",
+                                                "winner_id": "24e5fcc9-b226-4419-853c-53ef22998788",
+                                                "score_1": "11 x 8",
+                                                "score_2": "0 x 0",
+                                                "finished": false,
+                                                "championship_id": "4859c864-bfd5-4e1a-9749-93f39a016237",
+                                                "created_at": "2018-10-30T00:49:08.613Z",
+                                                "updated_at": "2018-10-30T00:57:16.737Z"
+                                            }
+                                        ]
+
+
 /championships:
     get:
         description: Lista todos campeonatos

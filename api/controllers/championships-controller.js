@@ -11,6 +11,15 @@ export default class Controller {
     ctx.send(championship.statusCode || 200, championship)
   }
 
+  async getMatches (ctx) {
+    const matches = await new Match()
+      .where('championship_id', ctx.params.id)
+      .fetchAll()
+      .catch(err => new InternalServerError(err.toString()))
+
+    ctx.send(matches.statusCode || 200, matches)
+  }
+
   async create (ctx) {
     const { body } = ctx.request
 

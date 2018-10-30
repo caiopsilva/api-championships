@@ -119,7 +119,15 @@ export default class Controller {
   }
 
   async getByUser (ctx) {
-    const Module = require(`../../db/models/${ctx.params.entity}`).default
+    let entity
+    if (ctx.params.entity === 'championships') {
+      entity = 'Championship'
+    }
+    if (ctx.params.entity === 'matches') {
+      entity = 'Match'
+    }
+
+    const Module = require(`../../db/models/${entity}`).default
     const module = await new Module({ user_id: ctx.params.id })
       .fetchAll()
       .catch(err => new BadRequest(err.toString()))
