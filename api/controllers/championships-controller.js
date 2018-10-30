@@ -1,5 +1,10 @@
 import Championship from '../../db/models/Championship'
-import { BadRequest, Deleted, InternalServerError, NotFound } from '../utils/errors'
+import {
+  BadRequest,
+  Deleted,
+  InternalServerError,
+  NotFound
+} from '../utils/errors'
 import Match from '../../db/models/Match'
 
 export default class Controller {
@@ -14,10 +19,19 @@ export default class Controller {
   async getMatches (ctx) {
     const matches = await new Match()
       .where('championship_id', ctx.params.id)
-      .fetchAll()
+      .fetchPage({
+        page: Number(ctx.query.page || 1),
+        pageSize: Number(ctx.query.page || 9),
+        withRelated: ['users']
+      })
       .catch(err => new InternalServerError(err.toString()))
 
-    ctx.send(matches.statusCode || 200, matches)
+    const res = {
+      data: matches.toJSON({ omitPivot: true }),
+      ...matches.pagination
+    }
+
+    ctx.send(matches.statusCode || 200, res)
   }
 
   async create (ctx) {

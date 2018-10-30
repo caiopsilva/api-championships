@@ -5,10 +5,19 @@ import { BadRequest, Deleted, InternalServerError } from '../utils/errors'
 export default class Controller {
   async get (ctx) {
     const matches = await new Match()
-      .fetchAll({ withRelated: ['users'] })
+      .fetchPage({
+        page: Number(ctx.query.page || 1),
+        pageSize: Number(ctx.query.page || 9),
+        withRelated: ['users']
+      })
       .catch(err => new InternalServerError(err.toString()))
 
-    ctx.send(matches.statusCode || 200, matches)
+    const res = {
+      data: matches.toJSON({ omitPivot: true }),
+      ...matches.pagination
+    }
+
+    ctx.send(res.statusCode || 200, res)
   }
 
   async create (ctx) {
