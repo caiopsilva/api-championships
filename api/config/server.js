@@ -9,8 +9,17 @@ import routes from '../routes'
 import getToken from '../middleware/jwt-middleware'
 import jwt from 'koa-jwt'
 import jwtSecret from '../utils/jwt-secret'
+import graphqlHttp from 'koa-graphql'
+import graphqlSchema from '../graphql/schema'
+import graphqlResolver from '../graphql/resolvers'
 
 const app = new Koa()
+
+app.use(mount('/graphql', graphqlHttp({
+  schema: graphqlSchema,
+  rootValue: graphqlResolver,
+  graphiql: true
+})))
 
 app.use(mount('/public', serve('./public')))
 
