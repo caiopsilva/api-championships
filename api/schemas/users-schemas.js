@@ -8,7 +8,7 @@ export default class Validate {
         name: Joi.string().required(),
         email: Joi.string().email().required(),
         password: Joi.string().required(),
-        rating: Joi.string().optional()
+        rating: Joi.number().optional().min(1000).max(2000)
       }
     })
   }

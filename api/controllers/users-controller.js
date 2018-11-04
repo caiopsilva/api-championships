@@ -32,7 +32,7 @@ export default class Controller {
       name: body.name,
       email: body.email,
       password: body.password,
-      rating: body.rating
+      rating: body.rating || 1500
     })
       .save()
       .catch(err => new BadRequest(err.toString()))
