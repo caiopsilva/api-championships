@@ -29,7 +29,7 @@ mediaType: application/json
                                 ]
     /signup:
         post:
-            description: Incluindo um novo usuario
+            description: Incluindo um novo usuario. Rating precisa estar entre o intervalo de 1000 e 2000. Caso não seja informado a api retorna como 1500.
             headers:
                 token:
             body:
