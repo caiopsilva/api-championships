@@ -95,13 +95,13 @@ export default class Controller {
           .fetch()
           .catch(err => new InternalServerError(err.toString()))
         await userWinner.save({
-          rating: Number(userWinner.attributes.rating) + ratingVariation
+          rating: Number(userWinner.attributes.rating) + Math.round(ratingVariation)
         })
         let userLoser = await new User({ id: match.users[1].id })
           .fetch()
           .catch(err => new InternalServerError(err.toString()))
         await userLoser.save({
-          rating: userLoser.attributes.rating - ratingVariation
+          rating: userLoser.attributes.rating - Math.round(ratingVariation)
         })
       }
 
