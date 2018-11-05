@@ -19,17 +19,32 @@ export default buildSchema(`
     posts: [Post!]!
   }
 
-  type UserInput {
+  input UserInput {
     email: String!
     name: String!
     password: String!
   }
 
-  type Mutation {
+  type AuthData {
+    user: User!
+    token: String!
+  }
+
+  input LoginInput {
+    email: String!
+    password: String!
+  }
+
+  type RootQuery {
+    login(input: LoginInput!): AuthData!
+  }
+
+  type RootMutation {
     createUser(input: UserInput): User!
   }
 
   schema {
-    mutation: Mutation
+    query: RootQuery
+    mutation: RootMutation
   }
 `)
