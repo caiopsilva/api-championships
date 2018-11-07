@@ -9,8 +9,32 @@ import routes from '../routes'
 import getToken from '../middleware/jwt-middleware'
 import jwt from 'koa-jwt'
 import jwtSecret from '../utils/jwt-secret'
+import graphqlHttp from 'koa-graphql'
+import graphqlSchema from '../graphql/schema'
+import graphqlResolver from '../graphql/resolvers'
 
 const app = new Koa()
+
+app.use(mount('/graphql', graphqlHttp((ctx) => ({
+  schema: graphqlSchema,
+  rootValue: graphqlResolver,
+  graphiql: true,
+  context: ctx,
+  formatError (err) {
+    if (!err.originalError) {
+      return err
+    }
+    const data = err.originalError.data
+    const message = err.message || 'The API did something wrong'
+    const status = err.originalError.status || 500
+
+    return {
+      message,
+      data,
+      status
+    }
+  }
+}))))
 
 app.use(mount('/public', serve('./public')))
 

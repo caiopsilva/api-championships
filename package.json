@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "babel-node api/index.js",
-    "dev": "nodemon api/index.js --exec babel-node index.js --presets env,stage-0",
+    "dev": "nodemon api/index.js --exec babel-node index.js",
     "test": "jest --detectOpenHandles --runInBand"
   },
   "license": "ISC",
@@ -24,11 +24,13 @@
     "bcrypt": "^2.0.0",
     "bookshelf": "^0.13.3",
     "bookshelf-uuid": "^1.0.0",
+    "graphql": "^14.0.2",
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.2",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
+    "koa-graphql": "^0.7.5",
     "koa-joi-validate": "^0.5.1",
     "koa-jwt": "^3.5.1",
     "koa-logger": "^3.2.0",
