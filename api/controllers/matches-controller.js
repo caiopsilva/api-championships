@@ -1,6 +1,6 @@
 import Match from '../../db/models/Match'
 import User from '../../db/models/User'
-import { BadRequest, Deleted, InternalServerError } from '../utils/errors'
+import { BadRequest, Deleted, InternalServerError, NotFound } from '../utils/errors'
 
 export default class Controller {
   async get (ctx) {
@@ -11,7 +11,7 @@ export default class Controller {
         withRelated: ['users']
       })
       .catch(err => new InternalServerError(err.toString()))
-    
+
     const res = {
       data: matches.toJSON({ omitPivot: true }),
       ...matches.pagination
