@@ -11,11 +11,21 @@ export default class Controller {
         withRelated: ['users']
       })
       .catch(err => new InternalServerError(err.toString()))
-
+    
     const res = {
       data: matches.toJSON({ omitPivot: true }),
       ...matches.pagination
     }
+
+    ctx.send(res.statusCode || 200, res)
+  }
+
+  async getOne (ctx) {
+    const matches = await new Match()
+      .fetch({ withRelated: ['users'] })
+      .catch(err => new InternalServerError(err.toString()))
+
+    const res = matches || new NotFound()
 
     ctx.send(res.statusCode || 200, res)
   }

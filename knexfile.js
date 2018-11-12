@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://postgres:admin@localhost:5432/db_ranking'
+    connection: 'postgres://caio:senha@localhost:5432/db_ranking'
   },
   production: {
     client: 'pg',

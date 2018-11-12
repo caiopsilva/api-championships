@@ -7,10 +7,10 @@ const ctrl = new MatchesController()
 const valid = new MatchesValidate()
 
 router.get('/matches', ctrl.get)
-
 router.post('/matches', valid.create(), ctrl.create)
-router.put('/matches/:id', valid.update(), ctrl.update)
 
+router.get('/matches/:id', ctrl.getOne)
+router.put('/matches/:id', valid.update(), ctrl.update)
 router.delete('/matches/:id', ctrl.delete)
 
 export default router.routes()
