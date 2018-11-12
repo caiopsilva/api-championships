@@ -16,6 +16,14 @@ export default class Controller {
     ctx.send(championship.statusCode || 200, championship)
   }
 
+  async getOne (ctx) {
+    const championship = await new Championship({ id: ctx.params.id })
+      .fetch({ withRelated: ['users'] })
+      .catch(err => new InternalServerError(err.toString()))
+
+    ctx.send(championship.statusCode || 200, championship)
+  }
+
   async getMatches (ctx) {
     const matches = await new Match()
       .where('championship_id', ctx.params.id)
@@ -44,6 +52,19 @@ export default class Controller {
       .catch(err => new BadRequest(err.toString()))
 
     if (championship.attributes) {
+      if (body.users) {
+        await championship.related('users').attach(body.users)
+        for (let i = 0; i < body.users.length; i++) {
+          for (let j = i + 1; j < body.users.length; j++) {
+            let match = await new Match({
+              championship_id: ctx.params.id
+            })
+              .save()
+              .catch(err => new BadRequest(err.toString()))
+            await match.related('users').attach([body.users[i], body.users[j]])
+          }
+        }
+      }
       championship = await Championship.forge({
         id: championship.attributes.id
       })

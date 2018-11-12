@@ -5,7 +5,8 @@ export default class Validate {
   create () {
     return validate({
       body: {
-        name: Joi.string().required()
+        name: Joi.string().required(),
+        users: Joi.array().optional()
       }
     })
   }
