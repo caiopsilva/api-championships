@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "babel-node api/index.js",
-    "dev": "nodemon api/index.js --exec babel-node index.js",
+    "dev": "nodemon --inspect api/index.js --exec babel-node index.js",
     "test": "jest --detectOpenHandles --runInBand"
   },
   "license": "ISC",
@@ -24,6 +24,7 @@
     "bcrypt": "^2.0.0",
     "bookshelf": "^0.13.3",
     "bookshelf-uuid": "^1.0.0",
+    "dotenv": "^6.1.0",
     "graphql": "^14.0.2",
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",

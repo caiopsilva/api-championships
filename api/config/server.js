@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import serve from 'koa-static'
 import Koa from 'koa'
 import Logger from 'koa-logger'
@@ -8,10 +9,11 @@ import mount from 'koa-mount'
 import routes from '../routes'
 import getToken from '../middleware/jwt-middleware'
 import jwt from 'koa-jwt'
-import jwtSecret from '../utils/jwt-secret'
 import graphqlHttp from 'koa-graphql'
 import graphqlSchema from '../graphql/schema'
 import graphqlResolver from '../graphql/resolvers'
+
+dotenv.config()
 
 const app = new Koa()
 
@@ -52,7 +54,7 @@ app.use(BodyParser({
 }))
 
 app.use(jwt({
-  secret: jwtSecret,
+  secret: process.env.SECRET,
   getToken
 }).unless({
   path: [
@@ -65,6 +67,7 @@ app.use(jwt({
 app.use(respond())
 
 app.use(routes.routes())
+
 app.use(routes.allowedMethods())
 
 export default app
