@@ -10,7 +10,8 @@
   "scripts": {
     "start": "babel-node api/index.js",
     "dev": "nodemon --inspect api/index.js --exec babel-node index.js",
-    "test": "jest --detectOpenHandles --runInBand"
+    "test": "jest --detectOpenHandles --runInBand",
+    "deploy": "git push heroku master"
   },
   "license": "ISC",
   "dependencies": {
