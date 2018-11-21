@@ -22,65 +22,44 @@ export default bookshelf.Model.extend({
   constructor: function () {
     bookshelf.Model.apply(this, arguments)
     this.on('updated', () => {
-      if (!fs.existsSync('./public/databaseLogger.txt')) {
+      if (!fs.existsSync('./public/userLogger.txt')) {
         fs.writeFileSync(
-          './public/databaseLogger.txt',
+          './public/userLogger.txt',
           `${new Date(Date.now()).toLocaleString()} --> Alteração de usuario\n`,
-          err => {
-            if (err) throw err
-            console.log('Updated!')
-          }
-        )
+          err => { if (err) throw err })
       } else {
         fs.appendFileSync(
-          './public/databaseLogger.txt',
+          './public/userLogger.txt',
           `${new Date(Date.now()).toLocaleString()} --> Alteração de usuario\n`,
-          err => {
-            if (err) throw err
-            console.log('Updated!')
-          })
+          err => { if (err) throw err })
       }
     })
 
     this.on('destroyed', () => {
-      if (!fs.existsSync('./public/databaseLogger.txt')) {
+      if (!fs.existsSync('./public/userLogger.txt')) {
         fs.writeFileSync(
-          './public/databaseLogger.txt',
+          './public/userLogger.txt',
           `${new Date(Date.now()).toLocaleString()} --> Exclusão de usuario\n`,
-          err => {
-            if (err) throw err
-            console.log('Exluded!')
-          }
-        )
+          err => { if (err) throw err })
       } else {
         fs.appendFileSync(
-          './public/databaseLogger.txt',
+          './public/userLogger.txt',
           `${new Date(Date.now()).toLocaleString()} --> Exclusão de usuario\n`,
-          err => {
-            if (err) throw err
-            console.log('Exluded!')
-          })
+          err => { if (err) throw err })
       }
     })
 
     this.on('created', () => {
-      if (!fs.existsSync('./public/databaseLogger.txt')) {
+      if (!fs.existsSync('./public/userLogger.txt')) {
         fs.writeFileSync(
-          './public/databaseLogger.txt',
+          './public/userLogger.txt',
           `${new Date(Date.now()).toLocaleString()} --> Cadastro de usuario\n`,
-          err => {
-            if (err) throw err
-            console.log('Created!')
-          }
-        )
+          err => { if (err) throw err })
       } else {
         fs.appendFileSync(
-          './public/databaseLogger.txt',
+          './public/userLogger.txt',
           `${new Date(Date.now()).toLocaleString()} --> Cadastro de usuario\n`,
-          err => {
-            if (err) throw err
-            console.log('Created!')
-          })
+          err => { if (err) throw err })
       }
     })
   }
