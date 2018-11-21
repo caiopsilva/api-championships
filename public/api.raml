@@ -326,13 +326,13 @@ mediaType: application/json
                                 }
         /matches:
             get:
-                description: Listar todas partidas de um campeonato. Paginação default ==> page=1, pageSize=9
+                description: Listar todas partidas de um campeonato. LIMIT (limite) e OFFSET (deslocamento)
                 queryParameters:
-                    page:
-                        example: page=1
+                    limit:
+                        example: limit=10
                         required: false
-                    pageSize:
-                        example: pageSize=4
+                    offset:
+                        example: offset=0
                         required: false
                 headers:
                     token:
@@ -372,21 +372,21 @@ mediaType: application/json
                                             ]
                                         }
                                     ],
-                                    "page": 1,
-                                    "pageSize": 1,
-                                    "rowCount": 2,
-                                    "pageCount": 2
+                                    "limit": 10,
+                                    "offset": 0,
+                                    "total": 1,
+                                    "totalPages": 1
                                 }
                     
 /matches:
     get:
-        description: Listando todas as partidas. Paginação default ==> page=1, pageSize=9
+        description: Listando todas as partidas. LIMIT (limite) e OFFSET (deslocamento)
         queryParameters:
-            page:
-                example: page=1
+            limit:
+                example: limit=10
                 required: false
-            pageSize:
-                example: pageSize=4
+            offset:
+                example: offset=0
                 required: false
         responses:
             200:
@@ -425,10 +425,10 @@ mediaType: application/json
                                         ]
                                     }
                                 ],
-                                "page": 1,
-                                "pageSize": 1,
-                                "rowCount": 2,
-                                "pageCount": 2
+                                "limit": 10,
+                                "offset": 0,
+                                "total": 1,
+                                "totalPages": 1
                             }
     /id:
         put:
