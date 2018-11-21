@@ -28,15 +28,22 @@ export default class Controller {
     const matches = await new Match()
       .where('championship_id', ctx.params.id)
       .fetchPage({
-        page: Number(ctx.query.page || 1),
-        pageSize: Number(ctx.query.page || 9),
+        limit: ctx.query.limit,
+        offset: ctx.query.offset,
         withRelated: ['users']
       })
       .catch(err => new InternalServerError(err.toString()))
 
+    const pagination = {
+      offset: matches.pagination.offset,
+      limit: matches.pagination.limit,
+      total: matches.pagination.rowCount,
+      totalPages: matches.pagination.pageCount
+    }
+
     const res = {
       data: matches.toJSON({ omitPivot: true }),
-      ...matches.pagination
+      ...pagination
     }
 
     ctx.send(matches.statusCode || 200, res)
